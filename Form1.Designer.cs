@@ -54,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox1.Controls.Add(this.rdobtnSalad);
             this.groupBox1.Controls.Add(this.rdobtnPizza);
             this.groupBox1.Controls.Add(this.rdobtnHamburger);
@@ -102,6 +103,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox2.Controls.Add(this.chkboxFrenchFries);
             this.groupBox2.Controls.Add(this.chkboxKetchup);
             this.groupBox2.Controls.Add(this.chkboxLettuce);
@@ -145,6 +147,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.groupBox3.Controls.Add(this.txtOrderTotal);
             this.groupBox3.Controls.Add(this.txtTaxtotal);
             this.groupBox3.Controls.Add(this.txtSubtotal);
@@ -209,22 +212,24 @@
             // 
             // btnPlaceorder
             // 
+            this.btnPlaceorder.BackColor = System.Drawing.Color.Lime;
             this.btnPlaceorder.Location = new System.Drawing.Point(541, 293);
             this.btnPlaceorder.Name = "btnPlaceorder";
             this.btnPlaceorder.Size = new System.Drawing.Size(116, 54);
             this.btnPlaceorder.TabIndex = 3;
             this.btnPlaceorder.Text = "Place Order !";
-            this.btnPlaceorder.UseVisualStyleBackColor = true;
+            this.btnPlaceorder.UseVisualStyleBackColor = false;
             this.btnPlaceorder.Click += new System.EventHandler(this.btnPlaceorder_Click);
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExit.Location = new System.Drawing.Point(541, 400);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(116, 58);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // cboBoxQuantity
@@ -235,7 +240,7 @@
             "1",
             "2",
             "3"});
-            this.cboBoxQuantity.Location = new System.Drawing.Point(231, 241);
+            this.cboBoxQuantity.Location = new System.Drawing.Point(248, 241);
             this.cboBoxQuantity.Name = "cboBoxQuantity";
             this.cboBoxQuantity.Size = new System.Drawing.Size(121, 24);
             this.cboBoxQuantity.TabIndex = 5;
@@ -246,15 +251,16 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(127, 244);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(110, 17);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Quantity :";
+            this.label4.Text = "Order Quantity :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 479);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(726, 483);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboBoxQuantity);
             this.Controls.Add(this.btnExit);

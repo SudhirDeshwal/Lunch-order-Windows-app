@@ -13,9 +13,11 @@ namespace Week_3_Lab
     public partial class Form1 : Form
 
     {
+
+        //Name : Sudhir /ID: N01324321
        //Variable Defined and value assigned globally
         public double result = 0;
-       public double HamburgerPrice = 6.95 ;
+        public double HamburgerPrice = 6.95 ;
         public double PizzaPrice = 5.95;
         public double SaladPrice = 4.95;
         public double AddOnItemPrice = 0.75;
@@ -40,8 +42,8 @@ namespace Week_3_Lab
             
         }
 
-       
 
+        // For Window form exit
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -64,46 +66,45 @@ namespace Week_3_Lab
         {
 
             
-
-
             if (chkboxLettuce.Checked)
             {
-                result = result + AddOnItemPrice;
+                result += AddOnItemPrice;
             }
             if (chkboxKetchup.Checked) {
-                result = result + AddOnItemPrice;
+                result +=  AddOnItemPrice;
             }
             if (chkboxFrenchFries.Checked)
             {
-                result = result + AddOnItemPrice;
+                result += AddOnItemPrice;
             }
             if (rdobtnHamburger.Checked)
             {
 
-                result = result + HamburgerPrice;
+                result +=  HamburgerPrice;
             }
 
             else if (rdobtnPizza.Checked)
             {
-                result = result + PizzaPrice;
+                result +=  PizzaPrice;
 
             }
 
             else if (rdobtnSalad.Checked)
             {
-                result = result + SaladPrice;
+                result += SaladPrice;
 
             }
 
             if (cboBoxQuantity.SelectedItem != null)
             {
                 int selectedvalue = int.Parse(cboBoxQuantity.SelectedItem.ToString());
-                Console.WriteLine("1 befor loop value----" + selectedvalue);
-                for (int i = 0; i <selectedvalue; i++)
+              
+              //for Loop using selected item through combobox.  
+               for (int i = 0; i <selectedvalue; i++)
                 {
                     if (selectedvalue == 1)
                     {
-                        result = result;
+                        result = result * 1;
                     }
                    else if (selectedvalue == 2)
                     {
@@ -117,14 +118,20 @@ namespace Week_3_Lab
             }
 
 
-
-            txtSubtotal.Text = result.ToString();
+            //Final calculations.
+            txtSubtotal.Text = result.ToString("C");
             totaltax = (result * TaxPercent) / 100;
-            txtTaxtotal.Text = totaltax.ToString();
+            txtTaxtotal.Text = totaltax.ToString("C");
 
             OrderTotal = totaltax + result;
-            txtOrderTotal.Text = OrderTotal.ToString();
+            txtOrderTotal.Text = OrderTotal.ToString("C");
             result = 0;
+
+
+            //textbox disabaled.
+            txtOrderTotal.Enabled = false;
+            txtSubtotal.Enabled = false;
+            txtTaxtotal.Enabled = false;
 
 
             
