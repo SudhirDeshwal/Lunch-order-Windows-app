@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chkboxLettuce = new System.Windows.Forms.CheckBox();
-            this.chkboxKetchup = new System.Windows.Forms.CheckBox();
-            this.chkboxFrenchFries = new System.Windows.Forms.CheckBox();
-            this.rdobtnHamburger = new System.Windows.Forms.RadioButton();
-            this.rdobtnPizza = new System.Windows.Forms.RadioButton();
             this.rdobtnSalad = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.rdobtnPizza = new System.Windows.Forms.RadioButton();
+            this.rdobtnHamburger = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkboxFrenchFries = new System.Windows.Forms.CheckBox();
+            this.chkboxKetchup = new System.Windows.Forms.CheckBox();
+            this.chkboxLettuce = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtOrderTotal = new System.Windows.Forms.TextBox();
             this.txtTaxtotal = new System.Windows.Forms.TextBox();
-            this.textOrderTotal = new System.Windows.Forms.TextBox();
+            this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnPlaceorder = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboBoxQuantity = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,6 +64,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Main Course";
             // 
+            // rdobtnSalad
+            // 
+            this.rdobtnSalad.AutoSize = true;
+            this.rdobtnSalad.Location = new System.Drawing.Point(25, 122);
+            this.rdobtnSalad.Name = "rdobtnSalad";
+            this.rdobtnSalad.Size = new System.Drawing.Size(114, 21);
+            this.rdobtnSalad.TabIndex = 2;
+            this.rdobtnSalad.TabStop = true;
+            this.rdobtnSalad.Text = "Salad - $4.95";
+            this.rdobtnSalad.UseVisualStyleBackColor = true;
+            this.rdobtnSalad.CheckedChanged += new System.EventHandler(this.rdobtnSalad_CheckedChanged);
+            // 
+            // rdobtnPizza
+            // 
+            this.rdobtnPizza.AutoSize = true;
+            this.rdobtnPizza.Location = new System.Drawing.Point(25, 79);
+            this.rdobtnPizza.Name = "rdobtnPizza";
+            this.rdobtnPizza.Size = new System.Drawing.Size(112, 21);
+            this.rdobtnPizza.TabIndex = 1;
+            this.rdobtnPizza.TabStop = true;
+            this.rdobtnPizza.Text = "Pizza - $5.95";
+            this.rdobtnPizza.UseVisualStyleBackColor = true;
+            this.rdobtnPizza.CheckedChanged += new System.EventHandler(this.rdobtnPizza_CheckedChanged);
+            // 
+            // rdobtnHamburger
+            // 
+            this.rdobtnHamburger.AutoSize = true;
+            this.rdobtnHamburger.Location = new System.Drawing.Point(25, 37);
+            this.rdobtnHamburger.Name = "rdobtnHamburger";
+            this.rdobtnHamburger.Size = new System.Drawing.Size(149, 21);
+            this.rdobtnHamburger.TabIndex = 0;
+            this.rdobtnHamburger.TabStop = true;
+            this.rdobtnHamburger.Text = "Hamburger - $6.95";
+            this.rdobtnHamburger.UseVisualStyleBackColor = true;
+            this.rdobtnHamburger.CheckedChanged += new System.EventHandler(this.rdobtnHamburger_CheckedChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.chkboxFrenchFries);
@@ -75,10 +111,41 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add-on Item($0.75/ each)";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // chkboxFrenchFries
+            // 
+            this.chkboxFrenchFries.AutoSize = true;
+            this.chkboxFrenchFries.Location = new System.Drawing.Point(32, 122);
+            this.chkboxFrenchFries.Name = "chkboxFrenchFries";
+            this.chkboxFrenchFries.Size = new System.Drawing.Size(105, 21);
+            this.chkboxFrenchFries.TabIndex = 2;
+            this.chkboxFrenchFries.Text = "French fries";
+            this.chkboxFrenchFries.UseVisualStyleBackColor = true;
+            // 
+            // chkboxKetchup
+            // 
+            this.chkboxKetchup.AutoSize = true;
+            this.chkboxKetchup.Location = new System.Drawing.Point(32, 79);
+            this.chkboxKetchup.Name = "chkboxKetchup";
+            this.chkboxKetchup.Size = new System.Drawing.Size(207, 21);
+            this.chkboxKetchup.TabIndex = 1;
+            this.chkboxKetchup.Text = "Ketchup, mustard and mayo";
+            this.chkboxKetchup.UseVisualStyleBackColor = true;
+            // 
+            // chkboxLettuce
+            // 
+            this.chkboxLettuce.AutoSize = true;
+            this.chkboxLettuce.Location = new System.Drawing.Point(32, 37);
+            this.chkboxLettuce.Name = "chkboxLettuce";
+            this.chkboxLettuce.Size = new System.Drawing.Size(210, 21);
+            this.chkboxLettuce.TabIndex = 0;
+            this.chkboxLettuce.Text = "Lettuce, Tomato and Onions";
+            this.chkboxLettuce.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textOrderTotal);
+            this.groupBox3.Controls.Add(this.txtOrderTotal);
             this.groupBox3.Controls.Add(this.txtTaxtotal);
             this.groupBox3.Controls.Add(this.txtSubtotal);
             this.groupBox3.Controls.Add(this.label3);
@@ -91,77 +158,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Order Total";
             // 
-            // chkboxLettuce
+            // txtOrderTotal
             // 
-            this.chkboxLettuce.AutoSize = true;
-            this.chkboxLettuce.Location = new System.Drawing.Point(32, 37);
-            this.chkboxLettuce.Name = "chkboxLettuce";
-            this.chkboxLettuce.Size = new System.Drawing.Size(210, 21);
-            this.chkboxLettuce.TabIndex = 0;
-            this.chkboxLettuce.Text = "Lettuce, Tomato and Onions";
-            this.chkboxLettuce.UseVisualStyleBackColor = true;
+            this.txtOrderTotal.Location = new System.Drawing.Point(212, 127);
+            this.txtOrderTotal.Name = "txtOrderTotal";
+            this.txtOrderTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtOrderTotal.TabIndex = 5;
             // 
-            // chkboxKetchup
+            // txtTaxtotal
             // 
-            this.chkboxKetchup.AutoSize = true;
-            this.chkboxKetchup.Location = new System.Drawing.Point(32, 79);
-            this.chkboxKetchup.Name = "chkboxKetchup";
-            this.chkboxKetchup.Size = new System.Drawing.Size(207, 21);
-            this.chkboxKetchup.TabIndex = 1;
-            this.chkboxKetchup.Text = "Ketchup, mustard and mayo";
-            this.chkboxKetchup.UseVisualStyleBackColor = true;
+            this.txtTaxtotal.Location = new System.Drawing.Point(212, 82);
+            this.txtTaxtotal.Name = "txtTaxtotal";
+            this.txtTaxtotal.Size = new System.Drawing.Size(100, 22);
+            this.txtTaxtotal.TabIndex = 4;
             // 
-            // chkboxFrenchFries
+            // txtSubtotal
             // 
-            this.chkboxFrenchFries.AutoSize = true;
-            this.chkboxFrenchFries.Location = new System.Drawing.Point(32, 122);
-            this.chkboxFrenchFries.Name = "chkboxFrenchFries";
-            this.chkboxFrenchFries.Size = new System.Drawing.Size(105, 21);
-            this.chkboxFrenchFries.TabIndex = 2;
-            this.chkboxFrenchFries.Text = "French fries";
-            this.chkboxFrenchFries.UseVisualStyleBackColor = true;
+            this.txtSubtotal.Location = new System.Drawing.Point(212, 34);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.Size = new System.Drawing.Size(100, 22);
+            this.txtSubtotal.TabIndex = 3;
             // 
-            // rdobtnHamburger
+            // label3
             // 
-            this.rdobtnHamburger.AutoSize = true;
-            this.rdobtnHamburger.Location = new System.Drawing.Point(25, 37);
-            this.rdobtnHamburger.Name = "rdobtnHamburger";
-            this.rdobtnHamburger.Size = new System.Drawing.Size(149, 21);
-            this.rdobtnHamburger.TabIndex = 0;
-            this.rdobtnHamburger.TabStop = true;
-            this.rdobtnHamburger.Text = "Hamburger - $6.95";
-            this.rdobtnHamburger.UseVisualStyleBackColor = true;
-            // 
-            // rdobtnPizza
-            // 
-            this.rdobtnPizza.AutoSize = true;
-            this.rdobtnPizza.Location = new System.Drawing.Point(25, 79);
-            this.rdobtnPizza.Name = "rdobtnPizza";
-            this.rdobtnPizza.Size = new System.Drawing.Size(112, 21);
-            this.rdobtnPizza.TabIndex = 1;
-            this.rdobtnPizza.TabStop = true;
-            this.rdobtnPizza.Text = "Pizza - $5.95";
-            this.rdobtnPizza.UseVisualStyleBackColor = true;
-            // 
-            // rdobtnSalad
-            // 
-            this.rdobtnSalad.AutoSize = true;
-            this.rdobtnSalad.Location = new System.Drawing.Point(25, 122);
-            this.rdobtnSalad.Name = "rdobtnSalad";
-            this.rdobtnSalad.Size = new System.Drawing.Size(114, 21);
-            this.rdobtnSalad.TabIndex = 2;
-            this.rdobtnSalad.TabStop = true;
-            this.rdobtnSalad.Text = "Salad - $4.95";
-            this.rdobtnSalad.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SubTotal :";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Order Total :";
             // 
             // label2
             // 
@@ -173,35 +198,14 @@
             this.label2.Text = "Tax (7.75%) :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Order Total :";
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Location = new System.Drawing.Point(212, 34);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(100, 22);
-            this.txtSubtotal.TabIndex = 3;
-            // 
-            // txtTaxtotal
-            // 
-            this.txtTaxtotal.Location = new System.Drawing.Point(212, 82);
-            this.txtTaxtotal.Name = "txtTaxtotal";
-            this.txtTaxtotal.Size = new System.Drawing.Size(100, 22);
-            this.txtTaxtotal.TabIndex = 4;
-            // 
-            // textOrderTotal
-            // 
-            this.textOrderTotal.Location = new System.Drawing.Point(212, 127);
-            this.textOrderTotal.Name = "textOrderTotal";
-            this.textOrderTotal.Size = new System.Drawing.Size(100, 22);
-            this.textOrderTotal.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SubTotal :";
             // 
             // btnPlaceorder
             // 
@@ -211,6 +215,7 @@
             this.btnPlaceorder.TabIndex = 3;
             this.btnPlaceorder.Text = "Place Order !";
             this.btnPlaceorder.UseVisualStyleBackColor = true;
+            this.btnPlaceorder.Click += new System.EventHandler(this.btnPlaceorder_Click);
             // 
             // btnExit
             // 
@@ -220,19 +225,20 @@
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // comboBox1
+            // cboBoxQuantity
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboBoxQuantity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBoxQuantity.FormattingEnabled = true;
+            this.cboBoxQuantity.Items.AddRange(new object[] {
             "1",
             "2",
             "3"});
-            this.comboBox1.Location = new System.Drawing.Point(231, 241);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 5;
+            this.cboBoxQuantity.Location = new System.Drawing.Point(231, 241);
+            this.cboBoxQuantity.Name = "cboBoxQuantity";
+            this.cboBoxQuantity.Size = new System.Drawing.Size(121, 24);
+            this.cboBoxQuantity.TabIndex = 5;
             // 
             // label4
             // 
@@ -249,7 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 479);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboBoxQuantity);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPlaceorder);
             this.Controls.Add(this.groupBox3);
@@ -282,12 +288,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textOrderTotal;
+        private System.Windows.Forms.TextBox txtOrderTotal;
         private System.Windows.Forms.TextBox txtTaxtotal;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Button btnPlaceorder;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboBoxQuantity;
         private System.Windows.Forms.Label label4;
     }
 }
