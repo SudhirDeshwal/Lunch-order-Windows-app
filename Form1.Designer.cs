@@ -239,6 +239,7 @@
             this.cboBoxQuantity.Name = "cboBoxQuantity";
             this.cboBoxQuantity.Size = new System.Drawing.Size(121, 24);
             this.cboBoxQuantity.TabIndex = 5;
+            this.cboBoxQuantity.SelectedIndexChanged += new System.EventHandler(this.cboBoxQuantity_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -263,6 +264,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Lunch Order";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

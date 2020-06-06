@@ -13,8 +13,8 @@ namespace Week_3_Lab
     public partial class Form1 : Form
 
     {
-
-      public double result = 0;
+       //Variable Defined and value assigned globally
+        public double result = 0;
        public double HamburgerPrice = 6.95 ;
         public double PizzaPrice = 5.95;
         public double SaladPrice = 4.95;
@@ -63,6 +63,9 @@ namespace Week_3_Lab
         private void btnPlaceorder_Click(object sender, EventArgs e)
         {
 
+            
+
+
             if (chkboxLettuce.Checked)
             {
                 result = result + AddOnItemPrice;
@@ -92,11 +95,28 @@ namespace Week_3_Lab
 
             }
 
-            else if() {
+            if (cboBoxQuantity.SelectedItem != null)
+            {
+                int selectedvalue = int.Parse(cboBoxQuantity.SelectedItem.ToString());
+                Console.WriteLine("1 befor loop value----" + selectedvalue);
+                for (int i = 0; i <selectedvalue; i++)
+                {
+                    if (selectedvalue == 1)
+                    {
+                        result = result;
+                    }
+                   else if (selectedvalue == 2)
+                    {
+                        result = result * 2;
+                    }
 
-
-
+                    else
+                        result = result * 3;
+                    selectedvalue = 0;
+                }
             }
+
+
 
             txtSubtotal.Text = result.ToString();
             totaltax = (result * TaxPercent) / 100;
@@ -114,6 +134,16 @@ namespace Week_3_Lab
         {
             
           
+        }
+
+        private void cboBoxQuantity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
